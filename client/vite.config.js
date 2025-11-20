@@ -6,20 +6,17 @@ import path from 'path'
 export default defineConfig({
   plugins: [react()],
 
-  // Make sure build output is inside client/dist
   build: {
     outDir: 'dist',
     emptyOutDir: true,
   },
 
-  // Resolve aliases if needed
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
 
-  // Needed when deploying behind Express or Render
   server: {
     port: 5173,
     host: true,
